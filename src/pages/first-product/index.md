@@ -1,10 +1,8 @@
 ---
-title: First Product
-slug: first-product
-date: 2018-07-21
-id: 2
-price: 7.00
-image: "first-product-image"
-path: "/first-product/"
+title: "First Product"
+path: "first-product"
+date: "2018-04-21"
 description: "This is an example product"
 ---
+
+These are the details for this product.

@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from "gatsby-image"
 
 const ProductPostTemplate = ({data}) => {
  const { markdownRemark } = data
@@ -9,10 +10,10 @@ const ProductPostTemplate = ({data}) => {
   return (
     <div>
       <h1>{title}</h1>
+      <Img fixed={data.file.childImageSharp.size} />
       <div
         dangerouslySetInnerHTML={{__html: html}}
       />
-
     </div>
   )
 }
@@ -23,6 +24,13 @@ export const productPageQuery = graphql`
       html
       frontmatter {
         title
+      }
+    }
+    file(relativePath: { eq: "../../static/assets/casual-buzz.jpg" }) {
+      childImageSharp {
+        sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes_tracedSVG
+      }
       }
     }
   }

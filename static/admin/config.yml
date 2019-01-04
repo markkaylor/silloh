@@ -8,7 +8,7 @@ public_folder: assets
 collections:
   - name: Product
     label: Product
-    folder: src
+    folder: products
     create: true
     fields:
       - { name: path, label: Path }

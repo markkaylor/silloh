@@ -3,13 +3,12 @@ import React from "react";
 import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
 
-import Header from '../components/Header'
+import Layout from '../components/Layout'
 
-const Layout = ({data}) => {
+const ProductIndex = ({data}) => {
   const { edges } = data.allMarkdownRemark;
   return (
-    <div>
-     <Header />
+    <Layout>
      {edges.map(edge => {
         const {frontmatter} = edge.node
         return (
@@ -20,7 +19,7 @@ const Layout = ({data}) => {
           </div>
         )
       })}
-    </div>
+    </Layout>
   )
 }
 
@@ -40,4 +39,4 @@ export const query = graphql`
   }
 `
 
-export default Layout
+export default ProductIndex

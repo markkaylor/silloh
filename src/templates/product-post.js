@@ -10,7 +10,7 @@ const ProductPostTemplate = ({data}) => {
   return (
     <div>
       <h1>{title}</h1>
-      <Img fixed={data.file.childImageSharp.size} />
+      <Img fixed={data.file.childImageSharp.fixed} />
       <div
         dangerouslySetInnerHTML={{__html: html}}
       />
@@ -28,9 +28,9 @@ export const productPageQuery = graphql`
     }
     file(relativePath: { eq: "../../static/assets/casual-buzz.jpg" }) {
       childImageSharp {
-        sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes_tracedSVG
-      }
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed
+        }
       }
     }
   }

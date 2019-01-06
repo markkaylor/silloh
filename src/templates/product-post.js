@@ -1,16 +1,18 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
 
 const ProductPostTemplate = ({data}) => {
  const { markdownRemark } = data
  const title = markdownRemark.frontmatter.title
  const html = markdownRemark.html
+ const image = markdownRemark.frontmatter.image.childImageSharp.fixed
 
+ console.log(markdownRemark);
   return (
     <div>
+      <Img fixed={image}/>
       <h1>{title}</h1>
-      <Img fixed={data.file.childImageSharp.fixed} />
       <div
         dangerouslySetInnerHTML={{__html: html}}
       />
@@ -24,12 +26,12 @@ export const productPageQuery = graphql`
       html
       frontmatter {
         title
-      }
-    }
-    file(relativePath: { eq: "../../static/assets/casual-buzz.jpg" }) {
-      childImageSharp {
-        fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
+        image {
+          childImageSharp {
+            fixed(width: 200, height: 200) {
+              ...GatsbyImageSharpFixed
+            }
+          }
         }
       }
     }

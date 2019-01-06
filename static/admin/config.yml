@@ -2,7 +2,7 @@ backend:
   name: github
   repo: markkaylor/silloh
 
-media_folder: static/assets
+media_folder: src/products/images
 public_folder: assets
 
 collections:

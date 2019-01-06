@@ -13,14 +13,14 @@ module.exports = {
         path: `${__dirname}/src/pages`
       }
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `img`,
-        path: `${__dirname}/static/assets`
-      }
-    },
+    `gatsby-remark-copy-linked-files`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 400,
+      },
+    },
   ]
 }

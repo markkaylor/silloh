@@ -30,8 +30,14 @@ export const query = graphql`
         node {
           frontmatter {
             title
-            date
             path
+            image {
+              childImageSharp {
+                fluid(maxWidth: 400) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

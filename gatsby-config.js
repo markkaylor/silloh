@@ -33,9 +33,9 @@ module.exports = {
               maxWidth: 920
             }
           },
-        ]
+        ],
       },
     },
-    `gatsby-plugin-netlify-cms`,
-  ]
+    `gatsby-plugin-netlify`,
+  ],
 }

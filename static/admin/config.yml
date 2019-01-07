@@ -3,7 +3,7 @@ backend:
   repo: markkaylor/silloh
 
 media_folder: src/pages/products/images
-public_folder: assets
+public_folder: /assets
 
 collections:
   - name: Product

@@ -2,9 +2,9 @@ var netlifyCmsPaths = {
   resolve: `gatsby-plugin-netlify-cms`,
   oprtions: {
     cmsConfig: `/static/admin/config.yml`
-  }
-
+  },
 }
+
 module.exports = {
   siteMetadata: {
     title: 'Silloh',

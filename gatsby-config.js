@@ -1,3 +1,10 @@
+var netlifyCmsPaths = {
+  resolve: `gatsby-plugin-netlify-cms`,
+  oprtions: {
+    cmsConfig: `/static/admin/config.yml`
+  }
+
+}
 module.exports = {
   siteMetadata: {
     title: 'Silloh',
@@ -13,13 +20,21 @@ module.exports = {
         path: `${__dirname}/src/pages`
       }
     },
-    `gatsby-remark-copy-linked-files`,
+    netlifyCmsPaths,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-remark-images`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        maxWidth: 400,
+        plugins: [
+          netlifyCmsPaths,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 920
+            }
+          },
+        ]
       },
     },
   ]

@@ -11,7 +11,6 @@ module.exports = {
     description: 'This is a store, we sell stuff.'
   },
   plugins: [
-    `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -37,5 +36,6 @@ module.exports = {
         ]
       },
     },
+    `gatsby-plugin-netlify-cms`,
   ]
 }

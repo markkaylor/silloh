@@ -1,5 +1,5 @@
 var netlifyCmsPaths = {
-  resolve: `gatsby-plugin-netlify-cms`,
+  resolve: `gatsby-plugin-netlify-cms-paths`,
   oprtions: {
     cmsConfig: `/static/admin/config.yml`
   },
@@ -11,14 +11,7 @@ module.exports = {
     description: 'This is a store, we sell stuff.'
   },
   plugins: [
-    `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options:  {
-        name: `pages`,
-        path: `${__dirname}/src/pages`
-      }
-    },
+
     netlifyCmsPaths,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -36,6 +29,21 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-netlify`,
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options:  {
+        name: `pages`,
+        path: `${__dirname}/src/pages`
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/img`,
+        name: 'images',
+      },
+    },
   ],
 }

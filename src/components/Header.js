@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const HeaderContainer = styled.div`
   grid-area: h;
-  border: 1px dashed black;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
 `
 
 const TitleDescriptionContainer = styled.div`

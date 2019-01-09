@@ -73,7 +73,7 @@ const ProductIndex = ({data}) => {
         return (
             <Card>
               <CardImage>
-              <Img fluid={frontmatter.image.childImageSharp.fluid}/>
+                <Img fluid={frontmatter.image.childImageSharp.fluid}/>
               </CardImage>
               <CardContent key={frontmatter.path}>
                 <div>

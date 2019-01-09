@@ -7,7 +7,7 @@ var netlifyCmsPaths = {
 
 module.exports = {
   siteMetadata: {
-    title: 'Silloh',
+    title: 'Hollis House',
     description: 'This is a store, we sell stuff.'
   },
   plugins: [

@@ -8,34 +8,46 @@ import Layout from '../components/Layout'
 
 import styled from 'styled-components'
 
+const CardContainer = styled.div`
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 20px;
+  padding: 1.25rem 8rem;
+`
 
 const Card = styled.div`
-  width: 400px;
-  height: 250px;
-  margin: 30px auto 0;
   background-color: white;
-  border-radius: 6px
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-  display: flex;
-
+  border-radius: 6px;
+  &:hover {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
 `
 
 const CardImage = styled.div`
-  width: 60%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  img {
+    border-radius: 6px 6px 0px 0px;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  }
+
 `
 
 const CardContent = styled.div`
-  width: 40%;
-  height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
-  border-left: 1px dashed grey;
+  padding: 0px 20px 20px 20px;
+
+  h2 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  h3 {
+    margin-top: 0px;
+  }
 `
 
 const Button = styled(Link)`
@@ -48,30 +60,37 @@ const Button = styled(Link)`
   padding: 8px 2px;
   text-decoration: none;
   box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+  border-radius: 3px;
 `
 
 const ProductIndex = ({data}) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
+    <CardContainer>
      {edges.map(edge => {
         const {frontmatter} = edge.node
         return (
-          <Card>
-            <CardImage>
-            <Img fixed={frontmatter.image.childImageSharp.fixed}/>
-            </CardImage>
-            <CardContent key={frontmatter.path}>
-              <h2>Cuttin{frontmatter.title}d</h2>
-              <h3>$200.00</h3>
-              <Button to={frontmatter.path}>
-                Take a Look!
-              </Button>
-            </CardContent>
-          </Card>
+            <Card>
+              <CardImage>
+              <Img fluid={frontmatter.image.childImageSharp.fluid}/>
+              </CardImage>
+              <CardContent key={frontmatter.path}>
+                <div>
+                  <h2>Cuttin{frontmatter.title}d</h2>
+                  <h3>$200.00</h3>
+                </div>
+                <Button to={frontmatter.path}>
+                  Take a Look!
+                </Button>
+              </CardContent>
+            </Card>
+
         )
       })}
+     </CardContainer>
     </Layout>
+
   )
 }
 
@@ -85,8 +104,8 @@ export const query = graphql`
             path
             image {
               childImageSharp {
-                fixed(width: 400, height: 400) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 630){
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

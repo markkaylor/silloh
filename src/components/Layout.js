@@ -1,9 +1,11 @@
 import React from "react";
 import Header from '../components/Header';
 
+import './Layout.css'
+
 import styled from 'styled-components'
 
-import './Layout.css'
+
 
 const Wrapper = styled.div`
   height: 100vh;

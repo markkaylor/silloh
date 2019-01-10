@@ -7,11 +7,9 @@ import Layout from '../components/Layout'
 const ProductDetailsCard = styled.div`
   width: 1000px;
   border-radius: 6px;
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   display: grid;
   grid-template-columns: 65% 35%;
   grid-gap: 20px;
-  padding: 2.5rem;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -22,6 +20,7 @@ const CardContent = styled.div`
 `
 
 const CardImage = styled.div`
+box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   img {
     border-radius: 6px;
     

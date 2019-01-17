@@ -11,21 +11,20 @@ import styled from 'styled-components'
 const CardContainer = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-gap: 20px;
+  grid-gap: 50px;
   padding: 1.25rem 8rem;
 `
 
 const Card = styled.div`
   background-color: white;
   border-radius: 6px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   &:hover {
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     cursor: pointer;
   }
 `
 
 const CardImage = styled.div`
-
   img {
     border-radius: 6px 6px 0px 0px;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);

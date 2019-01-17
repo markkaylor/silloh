@@ -19,6 +19,9 @@ const ProductDetailsCard = styled.div`
 `
 
 const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 const CardImage = styled.div`
@@ -64,12 +67,13 @@ const ProductPostTemplate = ({data}) => {
           <Img fluid={image}/>
         </CardImage>
         <CardContent>
-        <h1>{title}</h1>
-        <div
-          dangerouslySetInnerHTML={{__html: html}}
-        />
+          <h1>{title}</h1>
+          <div
+            dangerouslySetInnerHTML={{__html: html}}
+          />
+          <BuyButton post={markdownRemark.frontmatter} />
         </CardContent>
-        <BuyButton post={markdownRemark.frontmatter} images={image}/>
+        
       </ProductDetailsCard>
     </Layout>
   )
@@ -93,10 +97,6 @@ export const productPageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 630){
                   ...GatsbyImageSharpFluid
-            }
-            customFields {
-              name
-              values
             }
           }
         }

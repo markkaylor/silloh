@@ -21,14 +21,14 @@ const LogoContent = styled.div`
   justify-content: space-evenly;
 
   img {
-    height: 60px;
+    height: 90px;
   }
 `
 
 const Links = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 155px;
+  width: 400px;
 `
 
 const TitleAndDescription = ({ data }) => {
@@ -37,6 +37,8 @@ const TitleAndDescription = ({ data }) => {
         <img src={logo} alt="Logo"/>
         <Links>
           <div>Home</div>
+          <div>Shop</div>
+          <div>Gallery</div>
           <div>About</div>
         </Links>
       </LogoContent>

@@ -6,7 +6,6 @@ import './Layout.css'
 import styled from 'styled-components'
 
 
-
 const Wrapper = styled.div`
   height: 100vh;
   display: grid;
@@ -20,6 +19,7 @@ const Wrapper = styled.div`
 
 const Main = styled.div`
   grid-area: m;
+  margin-top: 80px;
 `
 
 const Layout = ({ children }) => {

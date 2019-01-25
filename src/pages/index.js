@@ -8,6 +8,8 @@ import Layout from '../components/Layout'
 
 import styled from 'styled-components'
 
+import bg from '../assets/bg.jpg'
+
 const CardContainer = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
@@ -18,14 +20,14 @@ const CardContainer = styled.div`
 const Card = styled.div`
   background-color: white;
   border-radius: 6px;
-  &:hover {
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-    cursor: pointer;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    &:hover {
+      cursor: pointer;
+    }
   }
 `
 
 const CardImage = styled.div`
-
   img {
     border-radius: 6px 6px 0px 0px;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
@@ -63,10 +65,51 @@ const Button = styled(Link)`
   border-radius: 3px;
 `
 
+const Banner = styled.div`
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(${bg});
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  height: calc(100vh - 150px);
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const BannerContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  p {
+    font-size: 25px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    opacity: 0.6;
+    margin-bottom: 30px;
+  }
+
+`
+
 const ProductIndex = ({data}) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
+    <Banner>
+    <BannerContent>
+        <h1>Hollis House</h1>
+        <p>Woodworking & Design</p>
+        <Button>See Our Work</Button>
+      </BannerContent>
+    </Banner>
     <CardContainer>
      {edges.map(edge => {
         const {frontmatter} = edge.node
@@ -77,7 +120,7 @@ const ProductIndex = ({data}) => {
               </CardImage>
               <CardContent key={frontmatter.path}>
                 <div>
-                  <h2>Cuttin{frontmatter.title}d</h2>
+                  <h2>Cutting {frontmatter.title}d</h2>
                   <h3>$200.00</h3>
                 </div>
                 <Button to={frontmatter.path}>

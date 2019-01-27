@@ -10,16 +10,20 @@ const ProductDetailsCard = styled.div`
   display: grid;
   grid-template-columns: 65% 35%;
   grid-gap: 20px;
-  overflow: scroll;
+  margin-top: 20px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 `
 
+
 const CardContent = styled.div`
+
+
 `
 
 const CardImage = styled.div`
 box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   img {
-    border-radius: 6px;
+    border-radius: 6px 0px 0px 6px;
 
   }
 

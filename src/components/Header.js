@@ -3,9 +3,10 @@ import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import logo from '../assets/logo.jpg'
 
+
 const HeaderContainer = styled.div`
   grid-area: h;
-  box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);;
   height: 150px;
   width: 100%;
   position: fixed;

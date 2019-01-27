@@ -4,11 +4,12 @@ import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
+
 import Layout from '../components/Layout'
 
 import styled from 'styled-components'
 
-import bg from '../assets/bg.jpg'
+
 
 const CardContainer = styled.div`
   display: grid;
@@ -65,51 +66,10 @@ const Button = styled(Link)`
   border-radius: 3px;
 `
 
-const Banner = styled.div`
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(${bg});
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-  height: calc(100vh - 150px);
-  background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
-const BannerContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  h1 {
-    font-size: 50px;
-    font-weight: bold;
-    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  }
-
-  p {
-    font-size: 25px;
-    font-weight: lighter;
-    color: rgb(255, 255, 255);
-    opacity: 0.6;
-    margin-bottom: 30px;
-  }
-
-`
-
 const ProductIndex = ({data}) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-    <Banner>
-    <BannerContent>
-        <h1>Hollis House</h1>
-        <p>Woodworking & Design</p>
-        <Button>See Our Work</Button>
-      </BannerContent>
-    </Banner>
     <CardContainer>
      {edges.map(edge => {
         const {frontmatter} = edge.node
@@ -128,7 +88,6 @@ const ProductIndex = ({data}) => {
                 </Button>
               </CardContent>
             </Card>
-
         )
       })}
      </CardContainer>

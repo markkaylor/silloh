@@ -20,7 +20,7 @@ const ProductDetailsCard = styled.div`
 const CardContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 `
 
 const CardImage = styled.div`
@@ -49,14 +49,14 @@ const ProductPostTemplate = ({data}) => {
       link={[{
         href:"https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css",
         rel:"stylesheet",
-        type:"text/css" 
+        type:"text/css"
       }]}
-      script={[{ 
-        type: 'text/javascript', 
+      script={[{
+        type: 'text/javascript',
         url:"",
         id: "snipcart",
         "data-api-key": "MjVjOWVjYmQtY2JmZS00MDA3LTg0ODItNGNjMDBmMjlhOTZhNjM2ODI4MzQ4MzA2OTU4NTA0",
-        src:"https://cdn.snipcart.com/scripts/2.0/snipcart.js" 
+        src:"https://cdn.snipcart.com/scripts/2.0/snipcart.js"
       },{
         type: 'text/javascript',
         src:"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
@@ -72,7 +72,7 @@ const ProductPostTemplate = ({data}) => {
           />
           <BuyButton post={markdownRemark.frontmatter} />
         </CardContent>
-        
+
       </ProductDetailsCard>
     </Layout>
   )

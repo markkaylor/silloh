@@ -15,7 +15,12 @@ const CardContainer = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   grid-gap: 50px;
-  padding: 1.25rem 8rem;
+
+  /*For Small*/
+  @media screen and (max-width: 39.9375em) {
+    grid-template-columns: 100%;
+    padding: 0;
+  }
 `
 
 const Card = styled.div`
@@ -24,7 +29,6 @@ const Card = styled.div`
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   &:hover {
     cursor: pointer;
-
   }
 `
 

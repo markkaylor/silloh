@@ -14,7 +14,7 @@ import styled from 'styled-components'
 const CardContainer = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-gap: 20px;
+  grid-gap: 50px;
   padding: 1.25rem 8rem;
 `
 
@@ -22,9 +22,9 @@ const Card = styled.div`
   background-color: white;
   border-radius: 6px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-    &:hover {
-      cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+
   }
 `
 

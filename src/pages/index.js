@@ -4,9 +4,12 @@ import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
+
 import Layout from '../components/Layout'
 
 import styled from 'styled-components'
+
+
 
 const CardContainer = styled.div`
   display: grid;
@@ -21,6 +24,7 @@ const Card = styled.div`
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   &:hover {
     cursor: pointer;
+
   }
 `
 
@@ -76,7 +80,7 @@ const ProductIndex = ({data}) => {
               </CardImage>
               <CardContent key={frontmatter.path}>
                 <div>
-                  <h2>Cuttin{frontmatter.title}d</h2>
+                  <h2>Cutting {frontmatter.title}d</h2>
                   <h3>$200.00</h3>
                 </div>
                 <Button to={frontmatter.path}>
@@ -84,7 +88,6 @@ const ProductIndex = ({data}) => {
                 </Button>
               </CardContent>
             </Card>
-
         )
       })}
      </CardContainer>

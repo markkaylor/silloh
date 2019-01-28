@@ -12,9 +12,11 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
+    "animejs": "^3.0.1",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.76",
     "gatsby-image": "^2.0.25",
+    "gatsby-plugin-layout": "^1.0.11",
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-netlify-cms": "^3.0.9",
     "gatsby-plugin-netlify-cms-paths": "^1.1.0",

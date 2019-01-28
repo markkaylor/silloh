@@ -5,9 +5,10 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 
-import Layout from '../components/Layout'
+import HomeLayout from '../components/HomeLayout'
 
 import styled from 'styled-components'
+
 
 
 
@@ -73,7 +74,7 @@ const Button = styled(Link)`
 const ProductIndex = ({data}) => {
   const { edges } = data.allMarkdownRemark;
   return (
-    <Layout>
+    <HomeLayout>
     <CardContainer>
      {edges.map(edge => {
         const {frontmatter} = edge.node
@@ -95,7 +96,7 @@ const ProductIndex = ({data}) => {
         )
       })}
      </CardContainer>
-    </Layout>
+    </HomeLayout>
 
   )
 }

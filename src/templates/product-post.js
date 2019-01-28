@@ -29,7 +29,6 @@ box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     border-radius: 6px 0px 0px 6px;
 
   }
-
 `
 
 const ProductPostTemplate = ({data}) => {

@@ -1,5 +1,7 @@
 import React from "react";
 import Header from '../components/Header';
+import HomeBanner from '../components/HomeBanner';
+
 
 import { Link } from 'gatsby'
 
@@ -7,16 +9,13 @@ import './Layout.css'
 
 import styled from 'styled-components'
 
-
-
-const PageWrapper = styled.div`
-  height: 100vh;
+const HomeWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 70px auto 70px;
   grid-template-areas:
     'h h h h h h h h h h h h'
-    '. m m m m m m m m m m .'
+    'b b b b b b b b b b b b'
     '. m m m m m m m m m m .'
 `
 
@@ -27,19 +26,17 @@ const Main = styled.div`
   place-items: center;
 `
 
-
-
-const Layout = ({ children, location }) => {
-
+const HomeLayout = ({ children, location }) => {
   return (
-    <PageWrapper>
+    <HomeWrapper>
       <Header />
-      <Main>
+      <HomeBanner />
+      <Main location={location}>
         {children}
       </Main>
-    </PageWrapper>
+    </HomeWrapper>
   )
-
 }
 
-export default Layout
+export default HomeLayout
+

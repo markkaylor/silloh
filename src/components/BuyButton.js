@@ -21,9 +21,9 @@ const BuyBtn = styled.div`
 const BuyButton = (({post}) => {
     return (
     <BuyBtn>
-        <a 
+        <a
             id="buyButton"
-            href="#"
+            href={post.path}
             className='snipcart-add-item buyBtn'
             data-item-id={post.id}
             data-item-price={post.price}

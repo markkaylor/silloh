@@ -2,9 +2,6 @@ import React from "react";
 import Header from '../components/Header';
 import HomeBanner from '../components/HomeBanner';
 
-
-import { Link } from 'gatsby'
-
 import './Layout.css'
 
 import styled from 'styled-components'

@@ -57,7 +57,7 @@ const HomeBanner = () => {
     <Banner>
       <BannerContent>
         <h1>Hollis House</h1>
-        <Button>Check Out The Shop!</Button>
+        <Button to='/shop'>Check Out The Shop!</Button>
       </BannerContent>
     </Banner>
   )

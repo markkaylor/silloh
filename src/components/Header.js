@@ -36,6 +36,11 @@ const Links = styled.div`
   display: flex;
   justify-content: space-between;
   width: 400px;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 `
 
 const TitleAndDescription = ({ data }) => {
@@ -44,8 +49,8 @@ const TitleAndDescription = ({ data }) => {
         <Link to='/'><img src={logo} alt="Logo"/></Link>
         <Links>
           <HeaderLink to='/'>Home</HeaderLink>
-          <HeaderLink>Shop</HeaderLink>
-          <HeaderLink>Gallery</HeaderLink>
+          <HeaderLink to='/shop'>Shop</HeaderLink>
+          <a target="_blank" without rel="noopener noreferrer" href='https://www.instagram.com/hollishouseco/?hl=en'>Instagram</a>
           <HeaderLink>About</HeaderLink>
         </Links>
       </LogoContent>

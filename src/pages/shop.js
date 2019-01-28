@@ -1,5 +1,5 @@
 import React from "react";
-import HomeLayout from '../components/HomeLayout'
+import Layout from '../components/Layout'
 import PostListing from '../components/PostListing'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
@@ -19,21 +19,20 @@ const CardContainer = styled.div`
 const ProductIndex = ({data, location}) => {
 
   return (
-    <HomeLayout>
+    <Layout>
       <CardContainer>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <PostListing post={node} />
         ))}
         </CardContainer>
-      </HomeLayout>
+      </Layout>
     )
-
 }
 
 export default ProductIndex
 
 export const query = graphql`
-  query ProductIndexingQuery {
+  query ShopQuery {
     allMarkdownRemark (sort: {order: DESC, fields: [frontmatter___date]}){
       edges {
         node {
@@ -53,3 +52,4 @@ export const query = graphql`
     }
   }
 `
+

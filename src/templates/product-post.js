@@ -7,11 +7,10 @@ import Layout from '../components/Layout'
 import BuyButton from '../components/BuyButton'
 
 const ProductDetailsCard = styled.div`
-  width: 1000px;
+  width: 100%;
   border-radius: 6px;
   display: grid;
   grid-template-columns: 65% 35%;
-  grid-gap: 20px;
   margin-top: 20px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 `
@@ -21,6 +20,8 @@ const CardContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: flex-end;
+  margin: 1rem;
 `
 
 const CardImage = styled.div`

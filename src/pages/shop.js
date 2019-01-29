@@ -16,10 +16,26 @@ const CardContainer = styled.div`
   }
 `
 
-const ProductIndex = ({data, location}) => {
+const PageHeader = styled.div`
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px dashed grey;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  h1 {
+    color: #383838;
+  }
+`
+
+const ProductIndex = ({data, location}) => {
   return (
     <Layout>
+    <PageHeader>
+      <h1>The Shop</h1>
+    </PageHeader>
       <CardContainer>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <PostListing post={node} />

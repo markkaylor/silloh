@@ -73,7 +73,7 @@ const PostListing = ({ post }) => {
       </CardImage>
       <CardContent key={post.frontmatter.path}>
         <div>
-          <h2>Cutting {post.frontmatter.title}</h2>
+          <h2>{post.frontmatter.title}</h2>
           <h3>$200.00</h3>
         </div>
         <Button to={post.frontmatter.path}>

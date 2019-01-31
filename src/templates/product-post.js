@@ -13,6 +13,10 @@ const ProductDetailsCard = styled.div`
   grid-template-columns: 65% 35%;
   margin-top: 20px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+
+  @media only screen and (max-width: 900px) {
+    grid-template: none;
+  }
 `
 
 
@@ -25,10 +29,11 @@ const CardContent = styled.div`
 `
 
 const CardImage = styled.div`
-box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   img {
     border-radius: 6px 0px 0px 6px;
-
+    @media only screen and (max-width: 1070px) {
+      border-radius: 6px 6px 0px 0px;
+    }
   }
 `
 
